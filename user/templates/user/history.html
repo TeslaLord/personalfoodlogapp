@@ -1,0 +1,23 @@
+{% extends 'user/base.html' %} {% load static %} {% load crispy_forms_tags%}
+{% block content %}
+
+
+
+
+<div class="container col-md-6" >
+  <h2>History</h2>
+  <br>
+  
+  {% for food in foods %}
+  <a href="{% url 'history_detail' food.id  %}"><div class="p-2 mb-1 bg-info text-white"> 
+    {{ food.uploaded_date}} - {{ food.estimated_calories }} calories
+   </div></a>
+   
+<br>
+
+  {% endfor %}
+
+  
+</div>
+
+{% endblock content %}

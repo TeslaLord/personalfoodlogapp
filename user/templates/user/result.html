@@ -1,0 +1,23 @@
+{% extends 'user/base.html' %} {% load static %} {% load crispy_forms_tags%}
+{% block content %}
+<div class="col-sm-6">
+    <img src="temp.jpeg" alt="">
+    <br><br>
+</div>
+<br>
+<table>
+    <tr>
+    <th>Ingredients</th>
+    <th>Calories</th>
+    </tr>
+    {% for result in ingredients %}
+    <tr>
+        <td>{{result.0}}</td>
+        <td>{{result.1}}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<h3>Total Estimated Calories: 800 calories</h3>
+{% endblock content %}
